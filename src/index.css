@@ -1,0 +1,188 @@
+/* src/index.css (MAJOR DESIGN OVERHAUL) */
+
+:root {
+    /* Base Colors - Adjusted for a darker, teal-green theme */
+    --primary-bg: #1A2F2D; /* Very dark background for the entire page */
+    --secondary-bg: #2B4745; /* Slightly lighter for menus, modals, game container */
+    --accent-color: #00ADB5; /* Vibrant teal for buttons, highlights */
+    --text-color: #DCDCDC; /* Light gray for general text on dark backgrounds */
+    --header-bg: #264D48; /* Darker header to match unrevealed tiles */
+    --header-text: #fff;
+    --border-color: #3B6B65; /* Darker border for structure */
+    --light-border-color: #4C827B; /* Lighter border for table rows etc. */
+
+    /* Tile Colors - For the checkered board */
+    --unrevealed-tile-dark: #264D48; /* Darker square of checkerboard */
+    --unrevealed-tile-light: #34665F; /* Lighter square of checkerboard */
+    --unrevealed-tile-hover-bg: #4A8C84; /* A middle ground hover color */
+    --revealed-tile-bg: #A1CCC9; /* Light teal/blue for revealed tiles */
+    --revealed-tile-border: #8DAAA7; /* Darker border for revealed tiles */
+
+    /* Mine & Flag Colors */
+    --mine-color-bg: #CC0000; /* Bright red for mines */
+    --mine-color-text: white;
+    --exploded-mine-bg: #990000; /* Darker red for exploded */
+    --chance-mine-bg: #FFA500; /* Orange for chance used */
+    --flagged-tile-bg: var(--unrevealed-tile-light); /* Flagged tiles keep their pattern background */
+    --flagged-icon-color: #CC0000; /* Red flag icon */
+    --hint-mine-bg: #FFE600; /* Yellow for hint */
+    --hint-icon-color: black; /* Black for contrast on yellow hint */
+
+    /* Number Colors (Themed Green Shades) */
+    --normal-number-1: #008800; /* Darker Green */
+    --normal-number-2: #00A000;
+    --normal-number-3: #00B800;
+    --normal-number-4: #00CC00;
+    --normal-number-5: #22DD22;
+    --normal-number-6: #44EE44;
+    --normal-number-7: #66FF66;
+    --normal-number-8: #88FF88; /* Lighter Green */
+
+    /* Modal */
+    --modal-overlay-bg: rgba(0, 0, 0, 0.75); /* Slightly darker overlay */
+    --modal-bg: var(--secondary-bg);
+    --modal-border: var(--border-color);
+    --modal-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+
+    /* Buttons */
+    --button-bg: var(--accent-color);
+    --button-hover-bg: #008C91; /* Darker accent */
+    --button-text: white;
+    --button-border-radius: 8px; /* Slightly more rounded */
+    --button-padding: 12px 25px; /* More generous padding */
+    --button-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --button-hover-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+
+    /* Leaderboard */
+    --leaderboard-table-bg: var(--secondary-bg);
+    --leaderboard-header-bg: var(--header-bg);
+    --leaderboard-row-hover: #3B6B65;
+
+    /* Tutorial */
+    --tutorial-bg: var(--secondary-bg);
+    --tutorial-border: var(--border-color);
+    --tutorial-highlight-color: #FFD700; /* Gold/Yellow for highlight */
+
+    /* Tile Size - adjust this to change overall game size */
+    --tile-size: 30px;
+
+    /* General Shadows */
+    --container-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+    --deep-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        --tile-size: 25px;
+        --button-padding: 10px 20px;
+    }
+    @media (max-width: 480px) {
+        --tile-size: 22px;
+        --button-padding: 8px 15px;
+    }
+}
+
+/* Color Blind Mode Variables - overrides for .color-blind-mode class on App */
+.color-blind-mode {
+    --normal-number-1: #FFA500; /* Orange */
+    --normal-number-2: #800080; /* Purple */
+    --normal-number-3: #00FFFF; /* Aqua */
+    --normal-number-4: #FF1493; /* Deep Pink */
+    --normal-number-5: #00FF00; /* Lime */
+    --normal-number-6: #FFD700; /* Gold */
+    --normal-number-7: #A9A9A9; /* Dark Gray */
+    --normal-number-8: #ADD8E6; /* Light Blue */
+
+    --mine-color-bg: #FF3333;
+    --exploded-mine-bg: #CC0000;
+    --chance-mine-bg: #FFCC00;
+    --flagged-tile-bg: #99CC66;
+    --flagged-icon-color: #FF3333;
+    --hint-mine-bg: #66CCFF;
+    --hint-icon-color: black;
+}
+
+/* --- Keyframe Animation for Background --- */
+@keyframes backgroundPan {
+    0% { background-position: 0% 0%; }
+    25% { background-position: 50% 0%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 50% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* --- BACKGROUND IMAGE & ANIMATION --- */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/images/bg_image.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps the background fixed when scrolling */
+    animation: backgroundPan 60s linear infinite alternate; /* Subtle, slow animation */
+    /* --- END BACKGROUND IMAGE & ANIMATION --- */
+
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrollbar from animation edge cases */
+}
+
+#root {
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px; /* Add some padding around the main app content */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5em; /* Larger title */
+    letter-spacing: 2px; /* A bit of spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+
+/* Styling for the Welcome Player text */
+.App > p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-top: -10px; /* Pull it up a bit */
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--button-border-radius);
+    padding: var(--button-padding);
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: var(--button-shadow); /* Add shadow */
+}
+
+button:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-2px); /* Slight lift on hover */
+    box-shadow: var(--button-hover-shadow); /* Enhanced shadow on hover */
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: translateY(0); /* No lift when disabled */
+    box-shadow: none; /* No shadow when disabled */
+}

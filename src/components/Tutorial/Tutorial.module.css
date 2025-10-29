@@ -1,0 +1,101 @@
+/* src/components/Tutorial/Tutorial.module.css (ADJUSTED) */
+
+.tutorialContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px; /* Increased gap */
+    padding: 30px; /* Increased padding */
+    background-color: var(--tutorial-bg);
+    border-radius: 15px; /* Consistent border-radius */
+    box-shadow: var(--container-shadow);
+    width: 100%;
+    max-width: fit-content;
+    box-sizing: border-box;
+}
+
+.tutorialPromptModal {
+    background-color: var(--modal-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px;
+    box-shadow: var(--modal-shadow);
+    text-align: center;
+    max-width: 90%;
+    width: 500px; /* Increased width */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap */
+    box-sizing: border-box;
+    border: 1px solid var(--modal-border);
+}
+
+.tutorialPromptModal h2 {
+    color: var(--text-color);
+    margin-top: 0;
+    font-size: 2.2em; /* Larger heading */
+}
+
+.promptButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap */
+}
+
+.tutorialPromptModal .backButton {
+    margin-top: 20px; /* Increased margin */
+    background-color: #888;
+    /* Other button styles inherited from global button */
+}
+.tutorialPromptModal .backButton:hover {
+    background-color: #666;
+}
+
+.tutorialMessage {
+    background-color: #00adb5;
+    border: 1px solid var(--tutorial-border);
+    padding: 20px; /* Increased padding */
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Increased gap */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15);
+}
+
+.tutorialMessage p {
+    margin: 0;
+    font-size: 1.2em; /* Larger text */
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.tutorialControls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Increased gap */
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.instruction {
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.2em; /* Larger instruction text */
+}
+
+.finishButton,
+.backToMenuButton {
+    /* Styling inherited from global button in index.css */
+}
+
+.backToMenuButton {
+    background-color: #888;
+    margin-top: 20px; /* Increased margin */
+}
+
+.backToMenuButton:hover {
+    background-color: #666;
+}

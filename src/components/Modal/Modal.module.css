@@ -1,0 +1,55 @@
+/* src/components/Modal/Modal.module.css (ADJUSTED) */
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--modal-overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: var(--modal-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* More rounded */
+    box-shadow: var(--modal-shadow);
+    text-align: center;
+    max-width: 90%;
+    width: 500px; /* Increased width */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap */
+    box-sizing: border-box;
+    border: 1px solid var(--modal-border);
+}
+
+.modalContent h2 {
+    color: var(--text-color);
+    margin-top: 0;
+    font-size: 2.2em; /* Larger heading */
+    margin-bottom: 15px;
+}
+
+.modalContent p {
+    color: var(--text-color);
+    font-size: 1.2em; /* Larger text */
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.score {
+    font-weight: bold;
+    color: var(--accent-color);
+    font-size: 2em; /* Larger score */
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+.button {
+    /* Styling inherited from global button in index.css */
+}

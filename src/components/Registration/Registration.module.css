@@ -1,0 +1,61 @@
+/* src/components/Registration/Registration.module.css (ADJUSTED) */
+.container {
+    background-color: var(--secondary-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Consistent border-radius */
+    box-shadow: var(--container-shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 450px; /* Increased max-width */
+    box-sizing: border-box;
+}
+
+.container h2 {
+    color: var(--text-color);
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger heading */
+}
+
+.container p {
+    color: var(--text-color);
+    font-size: 1.15em; /* Larger text */
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap */
+    margin-top: 25px;
+}
+
+.label {
+    font-size: 1.2em; /* Larger label */
+    color: var(--text-color);
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.input {
+    padding: 15px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    font-size: 1.1em; /* Larger input text */
+    width: calc(100% - 30px); /* Adjust for padding */
+    box-sizing: border-box;
+    background-color: white;
+    color: #333;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.15); /* Slightly stronger inner shadow */
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4);
+}
+
+.button {
+    width: 100%;
+    /* Styling inherited from global button in index.css */
+    margin-top: 15px;
+}

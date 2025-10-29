@@ -1,0 +1,139 @@
+/* src/components/Settings/Settings.module.css (ADJUSTED) */
+.settingsContainer {
+    background-color: var(--secondary-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Consistent border-radius */
+    box-shadow: var(--container-shadow);
+    width: 100%;
+    max-width: 650px; /* Increased max-width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Increased gap */
+}
+
+.settingsContainer h2 {
+    text-align: center;
+    color: var(--text-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2em; /* Larger heading */
+}
+
+.settingBlock {
+    background-color: var(--revealed-tile-bg);
+    padding: 25px; /* Increased padding */
+    border-radius: 10px; /* Consistent border-radius */
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.15); /* Slightly stronger inner shadow */
+}
+
+.settingBlock h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+    font-size: 1.5em; /* Larger subheading */
+}
+
+.settingItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Increased margin */
+    flex-wrap: wrap;
+    gap: 15px; /* Increased gap */
+}
+
+.settingItem span {
+    font-size: 1.15em; /* Larger text */
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.toggleButton,
+.warningButton {
+    padding: 12px 25px; /* Increased padding */
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    font-size: 1.05em; /* Larger font */
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    box-shadow: var(--button-shadow);
+}
+
+.toggleButton {
+    background-color: #007bff;
+    color: white;
+}
+
+.toggleButton:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: var(--button-hover-shadow);
+}
+
+.warningButton {
+    background-color: #dc3545;
+    color: white;
+}
+
+.warningButton:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: var(--button-hover-shadow);
+}
+
+.description {
+    font-size: 0.95em; /* Slightly larger description text */
+    color: #a0a0a0;
+    margin-top: 8px; /* Increased margin */
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.backButton {
+    padding: var(--button-padding);
+    background-color: #888;
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    font-size: var(--base-font-size);
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    margin-top: 30px; /* Increased margin */
+    align-self: flex-start;
+    box-shadow: var(--button-shadow);
+}
+
+.backButton:hover {
+    background-color: #666;
+    transform: translateY(-3px);
+    box-shadow: var(--button-hover-shadow);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .settingsContainer {
+        padding: 25px;
+        gap: 25px;
+    }
+    .settingBlock {
+        padding: 20px;
+    }
+    .settingItem {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .toggleButton,
+    .warningButton {
+        width: 100%;
+        text-align: center;
+    }
+    .backButton {
+        align-self: center;
+        width: 100%;
+    }
+}

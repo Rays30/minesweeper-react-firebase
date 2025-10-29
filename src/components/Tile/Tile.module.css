@@ -1,0 +1,89 @@
+/* src/components/Tile/Tile.module.css (ADJUSTED) */
+
+.tile {
+    width: var(--tile-size);
+    height: var(--tile-size);
+    /* Remove background-color here, it will be set by .darkPattern or .lightPattern */
+    border: 1px solid var(--border-color); /* Maintain border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(var(--tile-size) * 0.5);
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s ease;
+}
+
+/* NEW: Styles for checkerboard pattern */
+.darkPattern {
+    background-color: var(--unrevealed-tile-dark);
+}
+
+.lightPattern {
+    background-color: var(--unrevealed-tile-light);
+}
+
+/* Adjusted hover state for patterned tiles */
+.tile:hover:not(.revealed):not(.flagged):not(.hintedMine) {
+    background-color: var(--unrevealed-tile-hover-bg);
+}
+
+.revealed {
+    background-color: var(--revealed-tile-bg);
+    cursor: default;
+    border: 1px solid var(--revealed-tile-border);
+}
+
+.mine {
+    background-color: var(--mine-color-bg);
+    color: var(--mine-color-text);
+}
+
+.mineExploded {
+    background-color: var(--exploded-mine-bg);
+    color: white;
+}
+
+.mineUsedChance {
+    background-color: var(--chance-mine-bg);
+    color: white;
+}
+
+.flagged {
+    /* flagged tiles maintain their checkered background */
+    /* background-color: var(--flagged-tile-bg);  <-- This line is now effectively handled by .darkPattern/.lightPattern */
+    color: var(--flagged-icon-color);
+}
+
+.hintedMine {
+    background-color: var(--hint-mine-bg);
+    color: var(--hint-icon-color);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0.8; }
+}
+
+/* Number colors (Normal Mode) */
+.number-1 { color: var(--normal-number-1); }
+.number-2 { color: var(--normal-number-2); }
+.number-3 { color: var(--normal-number-3); }
+.number-4 { color: var(--normal-number-4); }
+.number-5 { color: var(--normal-number-5); }
+.number-6 { color: var(--normal-number-6); }
+.number-7 { color: var(--normal-number-7); }
+.number-8 { color: var(--normal-number-8); }
+
+/* Tutorial Highlight */
+.tutorialHighlight {
+    box-shadow: 0 0 10px 5px var(--tutorial-highlight-color);
+    animation: tutorialPulse 1.5s infinite alternate;
+}
+
+@keyframes tutorialPulse {
+    0% { transform: scale(1); box-shadow: 0 0 10px 3px var(--tutorial-highlight-color); }
+    100% { transform: scale(1.05); box-shadow: 0 0 15px 7px var(--tutorial-highlight-color); }
+}

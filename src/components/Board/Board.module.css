@@ -1,0 +1,9 @@
+/* src/components/Board/Board.module.css (ADJUSTED) */
+
+.board {
+    display: grid;
+    border: 2px solid var(--border-color);
+    /* Remove background-color from board, tiles handle their own */
+    box-shadow: var(--deep-shadow); /* Use a deeper shadow */
+    transition: box-shadow 0.3s ease; /* Smooth transition for shadows */
+}

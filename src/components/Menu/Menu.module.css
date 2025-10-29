@@ -1,0 +1,68 @@
+/* src/components/Menu/Menu.module.css (ADJUSTED) */
+
+.menuContainer {
+    background-color: var(--secondary-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Consistent border-radius */
+    box-shadow: var(--container-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap */
+    width: 100%;
+    max-width: 500px; /* Increased max-width */
+    box-sizing: border-box;
+}
+
+.selectionArea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Increased gap */
+    margin-bottom: 15px; /* Increased margin */
+}
+
+.optionGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Increased gap */
+    text-align: left;
+}
+
+.optionGroup label {
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 1.15em; /* Slightly larger label font */
+}
+
+.select {
+    padding: 12px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    font-size: 1.05em; /* Slightly larger font */
+    background-color: white;
+    color: #333;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C114.7L154.7%2C247c-2.7%2C2.7-6.2%2C4-9.5%2C4s-6.8-1.3-9.5-4L5.4%2C114.7c-3.6-3.6-4.6-8.6-2.7-13.7c1.9-5.1%2C6.1-8.5%2C11.5-8.5h262.2c5.4%2C0%2C9.6%2C3.4%2C11.5%2C8.5C291.6%2C106.1%2C290.5%2C111.1%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px; /* Larger arrow */
+    cursor: pointer;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger inner shadow */
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.4); /* Thicker focus ring */
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px; /* More space between buttons */
+    margin-top: 15px;
+}
+
+.button {
+    width: 100%;
+    /* Styling inherited from global button in index.css */
+}

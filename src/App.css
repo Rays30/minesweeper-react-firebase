@@ -1,0 +1,9 @@
+/* src/App.css */
+/* Minimal specific styles, most are in index.css and component modules */
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* Max width set in index.css to constrain the overall game area */
+}

@@ -1,0 +1,118 @@
+/* src/components/Leaderboard/Leaderboard.module.css (ADJUSTED) */
+
+.leaderboardContainer {
+    background-color: var(--secondary-bg);
+    padding: 40px; /* Increased padding */
+    border-radius: 15px; /* Consistent border-radius */
+    box-shadow: var(--container-shadow);
+    text-align: center;
+    width: 100%;
+    max-width: 900px; /* Increased max-width for better table display */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Increased gap */
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Increased gap */
+    margin-bottom: 25px; /* Increased margin */
+    flex-wrap: wrap;
+}
+
+.filterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Increased gap */
+}
+
+.filterGroup label {
+    font-weight: bold;
+    color: var(--text-color);
+    font-size: 1.1em; /* Slightly larger font */
+}
+
+.select {
+    padding: 10px 15px; /* Increased padding */
+    border: 1px solid var(--border-color);
+    border-radius: var(--button-border-radius);
+    font-size: 1em; /* Adjusted font size */
+    background-color: white;
+    color: #333;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2C114.7L154.7%2C247c-2.7%2C2.7-6.2%2C4-9.5%2C4s-6.8-1.3-9.5-4L5.4%2C114.7c-3.6-3.6-4.6-8.6-2.7-13.7c1.9-5.1%2C6.1-8.5%2C11.5-8.5h262.2c5.4%2C0%2C9.6%2C3.4%2C11.5%2C8.5C291.6%2C106.1%2C290.5%2C111.1%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    cursor: pointer;
+    box-shadow: var(--button-shadow);
+}
+
+.select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+}
+
+.scoreTableWrapper {
+    overflow-x: auto;
+    width: 100%;
+    border-radius: 10px; /* Match container border-radius */
+    overflow: hidden;
+}
+
+.scoreTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px; /* Increased margin */
+    background-color: var(--leaderboard-table-bg);
+    color: var(--text-color);
+}
+
+.scoreTable th,
+.scoreTable td {
+    border: 1px solid var(--border-color);
+    padding: 15px; /* More padding */
+    text-align: left;
+    font-size: 1em; /* Adjusted font size */
+}
+
+.scoreTable th {
+    background-color: var(--leaderboard-header-bg);
+    font-weight: bold;
+    color: var(--header-text);
+}
+
+.scoreTable tbody tr:nth-child(even) {
+    background-color: var(--light-border-color);
+}
+
+.scoreTable tbody tr:hover {
+    background-color: var(--leaderboard-row-hover);
+}
+
+.error {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.backButton {
+    padding: var(--button-padding);
+    background-color: #888;
+    color: var(--button-text);
+    border: none;
+    border-radius: var(--button-border-radius);
+    cursor: pointer;
+    font-size: var(--base-font-size); /* Use global base font size */
+    transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+    margin-top: 30px; /* Increased margin */
+    box-shadow: var(--button-shadow);
+}
+
+.backButton:hover {
+    background-color: #666;
+    transform: translateY(-3px);
+    box-shadow: var(--button-hover-shadow);
+}
